@@ -38,8 +38,7 @@ function install(editor, { margin = 30, disableBuiltInEdit = false }) {
         }
     }
 
-    window.addEventListener('keydown', handleKey);
-    editor.on('destroy', () => window.removeEventListener('keydown', handleKey));
+    editor.on('keydown', handleKey)
 
     editor.on('addcomment', ({ type, text, nodes, position }) => {
         if (type === 'inline') {
